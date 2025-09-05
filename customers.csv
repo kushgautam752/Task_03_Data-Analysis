@@ -1,0 +1,11 @@
+customer_id,name,email,city,state
+1,Customer_1,customer1@mail.com,Delhi,Delhi
+2,Customer_2,customer2@mail.com,Delhi,Delhi
+3,Customer_3,customer3@mail.com,Bangalore,Karnataka
+4,Customer_4,customer4@mail.com,Mumbai,Maharashtra
+5,Customer_5,customer5@mail.com,Mumbai,Maharashtra
+6,Customer_6,customer6@mail.com,Mumbai,Maharashtra
+7,Customer_7,customer7@mail.com,Delhi,Delhi
+8,Customer_8,customer8@mail.com,Kolkata,West Bengal
+9,Customer_9,customer9@mail.com,Delhi,Delhi
+10,Customer_10,customer10@mail.com,Kolkata,West Bengal
