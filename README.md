@@ -51,6 +51,58 @@ CREATE TABLE order_items (
     price DECIMAL(10,2)
 );
 
+select*from customers
+
+select*from order_items
+
+select*from products
+
+select*from orders
+
+--SELECT Basics--
+SELECT customer_id, name, city 
+FROM customers;
+
+--Filtering with WHERE--
+SELECT * 
+FROM customers 
+WHERE city = 'Delhi';
+
+SELECT order_id, total_amount 
+FROM orders 
+WHERE total_amount > 5000;
+
+--Sorting with ORDER BY--
+SELECT order_id, total_amount 
+FROM orders 
+ORDER BY total_amount DESC 
+LIMIT 10;
+
+--Aggregations with GROUP BY--
+--Find total sales per customer:--
+SELECT customer_id, SUM(total_amount) AS total_spent
+FROM orders
+GROUP BY customer_id
+ORDER BY total_spent DESC;
+--Find number of orders per city:--
+SELECT c.city, COUNT(o.order_id) AS order_count
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.city
+ORDER BY order_count DESC;
+
+--JOINs--
+SELECT o.order_id, p.product_name, oi.quantity, oi.price
+FROM orders o
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id;
+
+--Date Functions--
+SELECT order_id, order_date, total_amount
+FROM orders
+WHERE EXTRACT(MONTH FROM order_date) = 1
+  AND EXTRACT(YEAR FROM order_date) = 2025;
+
 🧑‍💻 Tools Used
 
 PostgreSQL
